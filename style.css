@@ -1,0 +1,51 @@
+.title {
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+/* Hele tabel vastleggen voor gelijke kolommen */
+.rooster-table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* Eerste kolom: vaste breedte */
+.rooster-table th:first-child,
+.rooster-table td:first-child {
+    width: 180px;
+    text-align: left;
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Dag kolommen: gelijk verdeeld */
+.rooster-table th:not(:first-child),
+.rooster-table td:not(:first-child) {
+    width: calc((100% - 180px) / 31);
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px;
+}
+
+/* Sticky header */
+.sticky-top {
+    position: sticky;
+    top: 0;
+    background-color: #f8f9fa;
+    z-index: 10;
+}
+
+/* Input vakken */
+input[type="text"] {
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+
+.rooster-invoer {
+    width: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-size: 0.9rem;
+}

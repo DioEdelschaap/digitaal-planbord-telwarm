@@ -1,0 +1,22 @@
+[
+    {
+        "ploeg": "Ploeg 1",
+        "werknemers": ["Jan Jansen", "Piet Pieters", "Klaas Klaassen", "Marie Maas"]
+    },
+    {
+        "ploeg": "Ploeg 2",
+        "werknemers": ["Sanne Smit", "Tom Tijssen", "Luc Lemmens", "Anna Alberts"]
+    },
+    {
+        "ploeg": "Ploeg 3",
+        "werknemers": ["Koen Kuipers", "Lisa Linders", "Bram Bakker", "Eva Evers"]
+    },
+    {
+        "ploeg": "Ploeg 4",
+        "werknemers": ["Daan Driessen", "Sophie Sanders", "Noor Nijman", "Rik Rademaker"]
+    },
+    {
+        "ploeg": "Ploeg 5",
+        "werknemers": ["Nina Nijkamp", "Tim Tijmen", "Roos Roelofs", "Hugo Hendriks"]
+    }
+]
