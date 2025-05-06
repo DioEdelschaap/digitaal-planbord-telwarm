@@ -6,6 +6,7 @@
 .rooster-table {
     table-layout: fixed;
     width: 100%;
+    border-collapse: collapse;
 }
 
 /* Eerste kolom: vaste breedte */
@@ -28,15 +29,27 @@
     padding: 2px;
 }
 
-/* Sticky header */
-.sticky-top {
-    position: sticky;
+/* ---------------- HEADER ------------------- */
+
+/* De pagina-header blijft altijd bovenaan vast */
+header {
+    position: fixed;
     top: 0;
-    background-color: #f8f9fa;
-    z-index: 10;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 1000;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Input vakken */
+/* Ruimte onder de vaste header zodat de tabel niet erachter schuift */
+.container-fluid {
+    margin-top: 130px;  /* Pas aan aan je header-hoogte */
+}
+
+/* ---------------- INPUTS ------------------- */
+
 input[type="text"] {
     width: 100%;
     border: none;

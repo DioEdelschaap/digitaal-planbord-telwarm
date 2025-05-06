@@ -89,3 +89,15 @@ function laadRooster(ploegenData) {
         });
     });
 }
+
+// ----- Automatisch ruimte onder de header instellen -----
+window.addEventListener('load', function () {
+    const header = document.querySelector('header');
+    const container = document.querySelector('.table-responsive');
+
+    if (header && container) {
+        const headerHeight = header.offsetHeight;
+        container.style.marginTop = (headerHeight + 20) + 'px'; // 20px extra ruimte
+        console.log('Headerhoogte ingesteld op:', headerHeight + 20+ 'px');
+    }
+});
