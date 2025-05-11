@@ -1,64 +1,104 @@
-.title {
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+body {
+  margin: 0;
+  font-family: sans-serif;
 }
 
-/* Hele tabel vastleggen voor gelijke kolommen */
-.rooster-table {
-    table-layout: fixed;
-    width: 100%;
-    border-collapse: collapse;
-}
-
-/* Eerste kolom: vaste breedte */
-.rooster-table th:first-child,
-.rooster-table td:first-child {
-    width: 180px;
-    text-align: left;
-    vertical-align: middle;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-/* Dag kolommen: gelijk verdeeld */
-.rooster-table th:not(:first-child),
-.rooster-table td:not(:first-child) {
-    width: calc((100% - 180px) / 31);
-    text-align: center;
-    vertical-align: middle;
-    padding: 2px;
-}
-
-/* ---------------- HEADER ------------------- */
-
-/* De pagina-header blijft altijd bovenaan vast */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #fff;
-    z-index: 1000;
-    padding: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: #f8f9fa;
+  z-index: 1000;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Ruimte onder de vaste header zodat de tabel niet erachter schuift */
-.container-fluid {
-    margin-top: 130px;  /* Pas aan aan je header-hoogte */
+.title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* ---------------- INPUTS ------------------- */
-
-input[type="text"] {
-    width: 100%;
-    border: none;
-    text-align: center;
+.month-controls {
+  margin-top: 20px;
 }
 
-.rooster-invoer {
-    width: 100%;
-    border: 1px solid #ccc;
-    text-align: center;
-    font-size: 0.9rem;
+.grid-container {
+  margin-top: 100px;
+  height: calc(100vh - 90px);
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-header {
+  position: sticky;
+  top: 120px;
+  z-index: 900;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 180px repeat(31, 1fr);
+}
+
+.grid-row div {
+  padding: 6px;
+  text-align: center;
+  font-weight: bold;
+  border-right: 1px solid #ddd;
+  background-color: #e9ecef;
+}
+
+.grid-body {
+  overflow-y: auto;
+  flex: 1;
+  padding-top: 40px; /* ruimte onder kop */
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 180px repeat(31, 1fr);
+}
+
+.cell {
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  padding: 4px;
+}
+
+.row .ploeg {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+  text-align: center;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+#dagenRij div,
+#nummersRij div {
+  background-color: #f0f0f0;         /* Lichtgrijze achtergrond */
+  border: 1px solid #000000;         /* Zwarte rasterlijnen */
+  color: #000;                       /* Optioneel: zwarte tekst */
+  font-weight: bold;
+}
+
+.row.ploeg-rij {
+  background-color: #f0f0f0;
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+.weekend {
+  background-color: #ffecec !important;  /* zachtroze achtergrond */
+  color: #a33 !important;                /* optioneel: donkerrode tekst */
+  font-weight: bold;
 }
