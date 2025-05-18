@@ -15,8 +15,6 @@ const ploegOffsets = {
 };
 const referentieDatum = new Date(2025, 0, 1); // 1 januari 2025
 
-// Maandnavigatie
-
 document.getElementById("prevMonth").addEventListener("click", () => {
   huidigeMaand--;
   if (huidigeMaand < 0) {
@@ -88,8 +86,16 @@ function laadRooster(ploegenData) {
       const offset = ploegOffsets[ploeg.ploeg] || 0;
       const index = ((dagenVerschil + offset) % standaardRooster.length + standaardRooster.length) % standaardRooster.length;
       const symbool = standaardRooster[index];
-      ploegRow.innerHTML += `<div class="cell">${symbool === '-' ? '' : symbool}</div>`;
+
+      const kleurClass = {
+        "O": "oranje",
+        "M": "blauw",
+        "N": "paars"
+      }[symbool];
+
+      ploegRow.innerHTML += `<div class="cell ${kleurClass ?? ''}">${symbool === '-' ? '' : symbool}</div>`;
     }
+
     body.appendChild(ploegRow);
 
     // Werknemersrijen met lege invulvelden

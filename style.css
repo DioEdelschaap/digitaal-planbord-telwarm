@@ -17,7 +17,11 @@ header {
 }
 
 .title {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: color 0.3s ease;
+}
+.title:hover {
+  color: #007bff;
 }
 
 .month-controls {
@@ -52,10 +56,26 @@ header {
   background-color: #e9ecef;
 }
 
+#dagenRij div,
+#nummersRij div {
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+  color: #000;
+  font-weight: bold;
+}
+
+.weekend {
+  background-color: #00ccff !important;  /* helder cyaan/turquoise */
+  color: #003344 !important;             /* diepblauw-grijzig */
+  font-weight: bold;
+}
+
+
+
 .grid-body {
   overflow-y: auto;
   flex: 1;
-  padding-top: 40px; /* ruimte onder kop */
+  padding-top: 40px;
 }
 
 .row {
@@ -70,11 +90,6 @@ header {
   padding: 4px;
 }
 
-.row .ploeg {
-  background-color: #f0f0f0;
-  font-weight: bold;
-}
-
 input {
   width: 100%;
   border: 1px solid #ccc;
@@ -83,22 +98,27 @@ input {
   box-sizing: border-box;
 }
 
-#dagenRij div,
-#nummersRij div {
-  background-color: #f0f0f0;         /* Lichtgrijze achtergrond */
-  border: 1px solid #000000;         /* Zwarte rasterlijnen */
-  color: #000;                       /* Optioneel: zwarte tekst */
+.cell input[type="text"]:hover {
+  background-color: #f0fff4;
+  border-color: #28a745;
+}
+
+/* Roosterletters (O, M, N) */
+.oranje {
+  background-color: #ccffcc !important;
+  font-weight: bold;
+}
+.blauw {
+  background-color: #ffd699 !important;
+  font-weight: bold;
+}
+.paars {
+  background-color: #d6ccff !important;
   font-weight: bold;
 }
 
-.row.ploeg-rij {
-  background-color: #f0f0f0;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
-}
-
-.weekend {
-  background-color: #ffecec !important;  /* zachtroze achtergrond */
-  color: #a33 !important;                /* optioneel: donkerrode tekst */
+.ploeg-rij {
+  background-color: #00ccff;     /* fris turquoise */
+  color: #003344;                /* goed leesbare donkerblauwe tekst */
   font-weight: bold;
 }
